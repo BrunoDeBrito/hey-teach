@@ -6,10 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Http\{RedirectResponse, Request};
 use Illuminate\Support\Facades\{Auth, Hash};
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\{Rules, ValidationException};
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
