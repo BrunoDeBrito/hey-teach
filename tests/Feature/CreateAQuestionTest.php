@@ -2,9 +2,7 @@
 
 use App\Models\User;
 
-use function Pest\Laravel\{
-    actingAs,
-    assertDatabaseCount, assertDatabaseHas, post};
+use function Pest\Laravel\{actingAs, assertDatabaseCount, assertDatabaseHas, post};
 
 it('should be able to create a new question bigger than 255 characters.', function () {
     /*Arrange => Preparar*/
