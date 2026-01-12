@@ -10,6 +10,8 @@ use Illuminate\Validation\Rule;
 class ProfileUpdateRequest extends FormRequest
 {
     /**
+     * Get the validation rules that apply to the request.
+     *
      * @return array<string, ContractRule|array<string|ContractRule>|string>
      */
     public function rules(): array
