@@ -7,7 +7,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\{RedirectResponse, Request};
 use Illuminate\Support\Facades\{Hash, Password};
 use Illuminate\Support\Str;
-use Illuminate\Validation\{Rules, ValidationException};
+use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 class NewPasswordController extends Controller
@@ -23,7 +23,7 @@ class NewPasswordController extends Controller
     /**
      * Handle an incoming new password request.
      *
-     * @throws ValidationException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {

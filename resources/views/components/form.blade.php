@@ -2,10 +2,10 @@
     'action',
     'post' => null,
     'put' => null,
-    'delete' => null,
+    'delete' => null
 ])
 
-<form action="{{ $action }}" method="post">
+<form action="{{ $action }}" method="post" {{ $attributes }}>
     @csrf
 
     @if($put)
