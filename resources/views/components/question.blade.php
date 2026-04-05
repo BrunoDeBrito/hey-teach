@@ -7,10 +7,11 @@
         dark:text-gray-400 flex justify-between items-center
     ">
     <span>{{ $question->question }}</span>
+
     <div>
         <x-form :action="route('question.like', $question)">
             <button class="flex items-start space-x-1 text-green-500" type="submit">
-                <x-icons.thumbs-up class="w-5 h-5  hover:text-green-300 cursor-pointer"/>
+                <x-icons.thumbs-up class="w-5 h-5 hover:text-green-300 cursor-pointer"/>
                 <span>{{ $question->votes_sum_like ?: 0 }}</span>
             </button>
         </x-form>
