@@ -10,5 +10,8 @@
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
 
-/.ideia
-/.vscode
+.idea/* export-ignore
+.vscode/* export-ignore
+node_modules/* export-ignore
+vendor/* export-ignore
+
