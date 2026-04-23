@@ -28,7 +28,7 @@
                     </tr>
                 </x-table.thead>
                 <tbody>
-                @foreach($questions->where('draft', true) as $question)
+                    @foreach($questions->where('draft', true) as $question)
                     <x-table.tr>
                         <x-table.td>{{ $question->question }}</x-table.td>
                         <x-table.td>
@@ -48,7 +48,6 @@
                 @endforeach
                 </tbody>
             </x-table>
-
         </div>
 
         <hr class="border-gray-700 border-dashed my-4">
@@ -66,7 +65,7 @@
                     </tr>
                 </x-table.thead>
                 <tbody>
-                @foreach($questions->where('draft', false) as $question)
+                    @foreach($questions->where('draft', false) as $question)
                     <x-table.tr>
                         <x-table.td>{{ $question->question }}</x-table.td>
                         <x-table.td>
@@ -80,7 +79,6 @@
                 @endforeach
                 </tbody>
             </x-table>
-
         </div>
     </x-container>
 </x-app-layout>
