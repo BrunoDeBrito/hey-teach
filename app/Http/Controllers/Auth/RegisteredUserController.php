@@ -8,7 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\{RedirectResponse, Request};
 use Illuminate\Support\Facades\{Auth, Hash};
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\{Rules, ValidationException};
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -24,7 +24,7 @@ class RegisteredUserController extends Controller
     /**
      * Handle an incoming registration request.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
