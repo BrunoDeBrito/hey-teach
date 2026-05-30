@@ -24,25 +24,19 @@ it('should return a view', function () {
         ->assertViewIs('question.edit');
 });
 
-it('should make sure that only question with status DRAFT can be edited.', static function () {
+it('should make sure that only question with status DRAFT can be edited', function () {
     $user             = User::factory()->create();
-    $questionNotDraft = Question::factory()
-        ->for($user, 'createdBy')
-        ->create(['draft' => false]);
+    $questionNotDraft = Question::factory()->for($user, 'createdBy')->create(['draft' => false]);
 
-    $draftQuestion = Question::factory()
-        ->for($user, 'createdBy')
-        ->create(['draft' => true]);
+    $draftQuestion = Question::factory()->for($user, 'createdBy')->create(['draft' => true]);
 
     actingAs($user);
 
-    get(route('question.edit', $questionNotDraft))
-        ->assertForbidden();
-    get(route('question.edit', $draftQuestion))
-        ->assertSuccessful();
+    get(route('question.edit', $questionNotDraft))->assertForbidden();
+    get(route('question.edit', $draftQuestion))->assertSuccessful();
 });
 
-/*it('should make sure that only the person who has created the question can edit the question', function () {
+it('should make sure that only the person who has created the question can edit the question', function () {
     $rightUser = User::factory()->create();
     $wrongUser = User::factory()->create();
     $question  = Question::factory()->create(['draft' => true, 'created_by' => $rightUser->id]);
@@ -52,4 +46,4 @@ it('should make sure that only question with status DRAFT can be edited.', stati
 
     actingAs($rightUser);
     get(route('question.edit', $question))->assertSuccessful();
-});*/
+});
